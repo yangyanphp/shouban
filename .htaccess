@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{http_host} ^yxwcn.cn [NC]
+RewriteRule ^(.*)$ http://www.yxwcn.cn/$1 [L,R=301]
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule index.html index.php
+RewriteRule list/([0-9]+).html index.php/index/Lists/catid/$1/
+RewriteRule list/([0-9]+)/([0-9]+).html index.php/index/Lists/catid/$1/page/$2
+RewriteRule show/([0-9]+)/([0-9]+).html index.php/index/Shows/catid/$1/$id/$2  
+
+#RewriteRule shownote/([0-9]+).html index.php/User/show_note/id/$1
+#RewriteRule showimg/([0-9]+).html index.php/User/show_img/id/$1
+
+#RewriteRule apply1.html index.php/User/apply1/
+#RewriteRule apply2.html index.php/User/apply2/
+#RewriteRule apply3.html index.php/User/apply3/
+
+</IfModule>
+
+
+
+
+
+
+
+
